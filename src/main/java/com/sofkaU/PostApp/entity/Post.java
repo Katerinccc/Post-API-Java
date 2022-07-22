@@ -1,6 +1,5 @@
-package com.sofkaU.PostApp;
+package com.sofkaU.PostApp.entity;
 
-import com.sofkaU.PostApp.entity.Comment;
 import lombok.Data;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
