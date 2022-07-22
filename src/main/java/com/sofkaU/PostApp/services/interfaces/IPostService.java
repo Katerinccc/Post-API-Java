@@ -10,9 +10,9 @@ public interface IPostService {
 
     Post createComment(Comment comment);
 
-    void deleteComment(Comment comment);
+    void deleteComment(Long id);
 
-    void deletePost(Post post);
+    void deletePost(Long id);
 
     List<Post> findAllPosts();
 

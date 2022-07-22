@@ -32,17 +32,17 @@ public class PostService implements IPostService {
     }
 
     @Override
-    public void deleteComment(Comment comment) {
-        commentRepository.deleteById(comment.getId());
+    public void deleteComment(Long id) {
+        commentRepository.deleteById(id);
     }
 
     @Override
-    public void deletePost(Post post) {
-        Post currentPost = postRepository.findById(post.getId()).get();
-        if (currentPost.getComments().size() > 0){
+    public void deletePost(Long id) {
+        Post currentPost = postRepository.findById(id).get();
+        if (!currentPost.getComments().isEmpty()){
             currentPost.getComments().forEach(comment -> commentRepository.deleteById(comment.getId()));
         }
-        postRepository.deleteById(post.getId());
+        postRepository.deleteById(id);
     }
 
     @Override
